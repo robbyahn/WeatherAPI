@@ -25,3 +25,50 @@ You've been using this API via cURL or Postman, but it's time for a proper inter
 As an optional bonus, build a small React app that calls your API and displays the weather and recommendation in a simple, user-friendly way.
 
 Extra marks will be given based on design decisions and adherence to clean architecture.
+
+
+
+{
+  "coord": {
+    "lon": 174.7756,
+    "lat": -41.2866
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 11.71,
+    "feels_like": 10.71,
+    "temp_min": 11.71,
+    "temp_max": 11.71,
+    "pressure": 998,
+    "humidity": 68,
+    "sea_level": 998,
+    "grnd_level": 986
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 7.93,
+    "deg": 310,
+    "gust": 11.7
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1756494433,
+  "sys": {
+    "country": "NZ",
+    "sunrise": 1756493385,
+    "sunset": 1756533241
+  },
+  "timezone": 43200,
+  "id": 2179537,
+  "name": "Wellington",
+  "cod": 200
+}
