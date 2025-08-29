@@ -23,6 +23,14 @@ public class WeatherController : ControllerBase
         [FromQuery] double lat, 
         [FromQuery] double lon)
     {
+        // Simulate upstream failures - every 5th request returns 503
+        // Interlocked.Increment(ref _requestCounter);
+        // if (_requestCounter % 5 == 0)
+        // {
+        //     _logger.LogWarning("Simulating upstream failure for request #{RequestNumber}", _requestCounter);
+        //     return StatusCode(503, new { error = "Service temporarily unavailable" });
+        // }
+
         try
         {
             if (lat < -90 || lat > 90)
@@ -36,7 +44,7 @@ public class WeatherController : ControllerBase
             }
 
             var forecast = await _weatherService.GetWeatherForecastAsync(lat, lon);
-            
+
             if (forecast == null)
             {
                 return Problem("Failed to retrieve weather data");
