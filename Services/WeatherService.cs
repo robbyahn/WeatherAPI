@@ -108,21 +108,13 @@ public class WeatherService : IWeatherService
         var recommendations = new List<string>();
 
         // Base temperature recommendations
-        if (tempC < 5)
+        if (tempC < 15)
         {
-            recommendations.Add("heavy coat and warm layers");
+            recommendations.Add("Don't forget to bring a coat");
         }
-        else if (tempC < 12)
+        else if (tempC > 25)
         {
-            recommendations.Add("warm jacket");
-        }
-        else if (tempC < 18)
-        {
-            recommendations.Add("light jacket or sweater");
-        }
-        else if (tempC < 25)
-        {
-            recommendations.Add("light layers");
+            recommendations.Add("It’s a great day for a swim");
         }
         else
         {
@@ -143,7 +135,7 @@ public class WeatherService : IWeatherService
         switch (weatherMain)
         {
             case "Rain" or "Drizzle" or "Thunderstorm":
-                recommendations.Add("waterproof jacket and umbrella");
+                recommendations.Add("Don’t forget the umbrella");
                 break;
             case "Snow":
                 recommendations.Add("waterproof boots and warm hat");
