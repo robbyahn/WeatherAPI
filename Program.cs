@@ -8,6 +8,18 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 
+// Add CORS for React frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000", "https://localhost:3001")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 // Register the weather service
 builder.Services.AddScoped<IWeatherService, WeatherService>();
 
@@ -24,6 +36,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Enable CORS
+app.UseCors("AllowReactApp");
+
 app.UseAuthorization();
 app.MapControllers();
 
