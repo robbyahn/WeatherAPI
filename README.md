@@ -27,12 +27,12 @@ As an optional bonus, build a small React app that calls your API and displays t
 
 Extra marks will be given based on design decisions and adherence to clean architecture.
 
-## How to run this demo
-Go to Project folder
+## How to run the demo
+Go to Project root folder <br/>
 $ docnet run
 
-Weather UI
-Navigate to the /weather-ui
+### Weather UI
+Navigate to /weather-ui <br/>
 $ npm start 
 
 ## Result
