@@ -10,6 +10,7 @@ public class WeatherController : ControllerBase
 {
     private readonly IWeatherService _weatherService;
     private readonly ILogger<WeatherController> _logger;
+    private static int _requestCounter = 0;
 
     public WeatherController(IWeatherService weatherService, ILogger<WeatherController> logger)
     {
@@ -24,12 +25,12 @@ public class WeatherController : ControllerBase
         [FromQuery] double lon)
     {
         // Simulate upstream failures - every 5th request returns 503
-        // Interlocked.Increment(ref _requestCounter);
-        // if (_requestCounter % 5 == 0)
-        // {
-        //     _logger.LogWarning("Simulating upstream failure for request #{RequestNumber}", _requestCounter);
-        //     return StatusCode(503, new { error = "Service temporarily unavailable" });
-        // }
+        Interlocked.Increment(ref _requestCounter);
+        if (_requestCounter % 5 == 0)
+        {
+            _logger.LogWarning("Simulating upstream failure for request #{RequestNumber}", _requestCounter);
+            return StatusCode(503, new { error = "Service temporarily unavailable" });
+        }
 
         try
         {
