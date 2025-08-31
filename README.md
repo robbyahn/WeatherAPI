@@ -1,3 +1,4 @@
+# Wellington Weather API
 Wellington weather is famously unpredictable. As a developer heading into the office, it helps to know what you’re in for - and what to bring with you.
 
 Your task is to build a small weather-checking API using .NET 8. The API should return a basic forecast along with a helpful recommendation for what to wear.
@@ -19,14 +20,27 @@ To simulate occasional upstream failures, every fifth request to your endpoint s
 
 Include tests that cover the different kinds of responses - both success and error cases.
 
-Bonus Challenge
+## Bonus Challenge
 You've been using this API via cURL or Postman, but it's time for a proper interface.
 
 As an optional bonus, build a small React app that calls your API and displays the weather and recommendation in a simple, user-friendly way.
 
 Extra marks will be given based on design decisions and adherence to clean architecture.
 
+## How to run this demo
+Go to Project folder
+$ docnet run
 
+Weather UI
+Navigate to the /weather-ui
+$ npm start 
+
+## Result
+![Result](https://github.com/robbyahn/WeatherAPI/blob/main/screenshot.png?raw=true)
+
+
+
+## Weather API JSON structure
 
 {
   "coord": {
