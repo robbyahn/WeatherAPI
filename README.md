@@ -29,7 +29,7 @@ Extra marks will be given based on design decisions and adherence to clean archi
 
 ## How to run the demo
 Go to Project root folder <br/>
-$ docnet run
+$ dotnet run
 
 ### Weather UI
 Navigate to /weather-ui <br/>
